@@ -212,8 +212,8 @@
             { title: "Current Time", info: "4:24 PM." },
             { title: "Address of Origin", info: "312 Platt Ave N, Red Lodge, MT 59068." },
             { title: "Address of Destination", info: "424 4th St, Custer, MT 59024." },
-            { title: "Distance to Destination", info: "0" },
-            { title: "Estimated Time to Destination", info: "0" },
+            { title: "Distance to Destination", info: "114.77 miles." },
+            { title: "Estimated Time to Destination", info: "119 minutes." },
             { title: "State of Charge of Battery", info: "44% charge." },
             { title: "Range of Current Battery", info: "132 minutes." },
             { title: "Estimated Drive Distance with Current Charge", info: "99 miles." },
@@ -231,10 +231,10 @@
                 name: 'Cenex',
 
                 location: '8014 S Frontage Rd, Billings, MT 59101',
-                originDistance: ' Miles',
-                originTime: ' Minutes',
-                destDistance: ' Miles ',
-                destTime: ' Minutes',
+                originDistance: '61.44',
+                originTime: '58',
+                destDistance: '55.75',
+                destTime: '69',
 
                 waitTime: [
                         { type: 'J1772', value: '10' }
@@ -270,10 +270,10 @@
                 name: 'Bretz RV & Marine',
 
                 location: '2999 Old Hardin Rd, Billings, MT 59101',
-                originDistance: ' Miles',
-                originTime: ' Minutes',
-                destDistance: ' Miles ',
-                destTime: ' Minutes',
+                originDistance: '49.04',
+                originTime: '47',
+                destDistance: '67.03',
+                destTime: '78',
                 
                 waitTime: [
                         { type: 'NEMA', value: '0' },
@@ -284,8 +284,8 @@
                         { type: 'Wall', value: '6' }
                     ],
                 chargeTime: [
-                        { type: 'NEMA', value: '311' },
-                        { type: 'Wall', value: '311' }
+                        { type: 'NEMA', value: '' },
+                        { type: 'Wall', value: '' }
                     ],
                 socketAvalability: [
                         { type: 'NEMA', value: '3' },
@@ -939,8 +939,8 @@
         // Add route time/distance to instructions & update charging station details
         map.on('load', async () => {
             await getRoute(0); // Ensure this is awaited properly
-            await updateAndDisplayRouteInstructions();  // Ensure this is awaited properly
-            await updateChargingStationDetails();  // Ensure this is awaited properly
+            // await updateAndDisplayRouteInstructions();  // Ensure this is awaited properly
+            // await updateChargingStationDetails();  // Ensure this is awaited properly
             addChargingStations();  // You might need to re-add stations to reflect updated data
         });
 
