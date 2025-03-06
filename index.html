@@ -512,7 +512,10 @@
             const encodedImageUrl = encodeURIComponent(station.imageUrl);
 
             let waitTimeDetails = station.waitTime.map(item => `The estimated wait time of socket ${item.type} is ${item.value} minutes.`).join('<br><br>');
-            let chargeTimeDetails = station.chargeTime.map(item => `The estimated charging time of socket ${item.type} to fully charge your car is ${item.value} minutes.`).join('<br><br>');
+            let chargeTimeDetails = station.chargeTime.map(item => {
+                let chargeTimeText = item.value ? `${item.value} minutes` : "unknown";
+                return `The estimated charging time of socket ${item.type} to fully charge your car is ${chargeTimeText}.`;
+            }).join('<br><br>');
             let plugDetails = station.plugNumb.map(item => {
                 let availability = station.socketAvalability.find(availItem => availItem.type === item.type);
                 let value = Number(item.value); // Convert to a number if necessary
